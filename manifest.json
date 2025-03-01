@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub PR Security Analyzer",
+  "version": "1.0.0",
+  "description": "Analyzes GitHub pull requests for potential security concerns",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/pull/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

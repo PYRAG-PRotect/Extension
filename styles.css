@@ -1,0 +1,143 @@
+body {
+  width: 400px;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+  color: #24292e;
+  margin-bottom: 16px;
+}
+
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f6f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.score-circle.high {
+  border-color: #2da44e;
+  box-shadow: 0 0 10px rgba(45, 164, 78, 0.2);
+}
+
+.score-circle.medium {
+  border-color: #d29922;
+  box-shadow: 0 0 10px rgba(210, 153, 34, 0.2);
+}
+
+.score-circle.low {
+  border-color: #cf222e;
+  box-shadow: 0 0 10px rgba(207, 34, 46, 0.2);
+}
+
+#security-score {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#score-label {
+  margin-top: 8px;
+  color: #57606a;
+  font-size: 14px;
+}
+
+.files-analyzed {
+  color: #57606a;
+  font-size: 14px;
+  margin: 16px 0;
+  padding: 8px;
+  background: #f6f8fa;
+  border-radius: 6px;
+}
+
+.issue-group {
+  margin: 16px 0;
+  text-align: left;
+}
+
+.issue-group-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292e;
+  margin: 8px 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.issue-item {
+  text-align: left;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  background: #f6f8fa;
+  border-left: 4px solid #cf222e;
+  transition: transform 0.2s ease;
+}
+
+.issue-item:hover {
+  transform: translateX(4px);
+}
+
+.issue-title {
+  font-weight: 600;
+  color: #24292e;
+  margin-bottom: 4px;
+}
+
+.issue-file {
+  color: #57606a;
+  font-size: 12px;
+  margin: 4px 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+}
+
+.issue-description {
+  color: #57606a;
+  font-size: 12px;
+  margin: 4px 0;
+  word-break: break-all;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+}
+
+.error-message {
+  color: #cf222e;
+  text-align: center;
+  padding: 16px;
+  background: #ffebe9;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d0d7de;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afb8c1;
+}

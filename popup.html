@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitHub PR Security Analyzer</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>PR Security Analyzer</h1>
+      <div id="score-container">
+        <div class="score-circle">
+          <span id="security-score">-</span>
+        </div>
+        <p id="score-label">Security Score</p>
+      </div>
+      <div id="api-status"></div>
+      <div id="issues-container"></div>
+      <div id="settings-container">
+        <button id="settings-toggle" class="settings-button">
+          Configure API Keys
+        </button>
+        <div id="settings-panel" class="settings-panel hidden">
+          <h3>Security API Keys</h3>
+          <p class="settings-description">
+            Enter your API keys to enable advanced security scanning
+          </p>
+          <form id="api-keys-form">
+            <div class="form-group">
+              <label for="gitguardian-key">GitGuardian API Key:</label>
+              <input
+                type="password"
+                id="gitguardian-key"
+                placeholder="Enter GitGuardian API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="semgrep-key">Semgrep API Key:</label>
+              <input
+                type="password"
+                id="semgrep-key"
+                placeholder="Enter Semgrep API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="socket-key">Socket API Key:</label>
+              <input
+                type="password"
+                id="socket-key"
+                placeholder="Enter Socket API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="virustotal-key">VirusTotal API Key:</label>
+              <input
+                type="password"
+                id="virustotal-key"
+                placeholder="Enter VirusTotal API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="crowdsec-key">CrowdSec API Key:</label>
+              <input
+                type="password"
+                id="crowdsec-key"
+                placeholder="Enter CrowdSec API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="safebrowsing-key"
+                >Google Safe Browsing API Key:</label
+              >
+              <input
+                type="password"
+                id="safebrowsing-key"
+                placeholder="Enter Google Safe Browsing API key"
+              />
+            </div>
+            <div class="form-group">
+              <label for="abuseipdb-key">AbuseIPDB API Key:</label>
+              <input
+                type="password"
+                id="abuseipdb-key"
+                placeholder="Enter AbuseIPDB API key"
+              />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="save-button">Save API Keys</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
