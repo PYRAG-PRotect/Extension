@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 const SYSTEM_PROMPT = `You are a security-focused AI that analyzes code for vulnerabilities, assigns a severity score (0-10), and provides fixes. Detect and mitigate the following:
 
 SQL Injection – Detect unsanitized user input in queries. Use parameterized queries.
@@ -45,6 +48,8 @@ def get_user_data(user_input):
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
 const apiKey = process.env.GEMINI_API_KEY;
+
+
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -61,14 +66,19 @@ const generationConfig = {
 };
 
 async function analyzeSecurityIssues(ip) {
+  console.log('Starting chat session...');
   const chatSession = model.startChat({
     generationConfig,
     history: [],
   });
 
+  console.log('Sending message...');
   const result = await chatSession.sendMessage(ip);
+  console.log('Message sent, processing response...');
   const response = result.response.text();
   
+  console.log('Response:', response);
+
   // Parse the response text to extract key information
   const parseResponse = (text) => {
     const lines = text.split('\n');
@@ -108,6 +118,11 @@ async function analyzeSecurityIssues(ip) {
 
   return parseResponse(response);
 }
+
+(async () => {
+  const result = await analyzeSecurityIssues('your_input_here');
+  console.log('Parsed Issues:', result);
+})();
 
 export default analyzeSecurityIssues;
 // const ip=`import os

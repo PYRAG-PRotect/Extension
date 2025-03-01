@@ -689,9 +689,11 @@ async function analyzePR() {
     analyzedFiles.add(fileName);
 
     const code = extractCodeFromDiff(diff);
+    console.log(code);
+    
     if (!code) continue;
 
-    // Try API-based scanning first if keys are available
+    // Try API-based scanning first if keys are available 
     if (useApis) {
       console.log(`Scanning ${fileName} with security APIs...`);
       const apiResults = await analyzeWithAPIs(fileName, code);
@@ -718,6 +720,7 @@ async function analyzePR() {
     usingApis: useApis,
   };
 }
+
 
 // Send results to popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
