@@ -2,21 +2,26 @@
   "manifest_version": 3,
   "name": "GitHub PR Security Analyzer",
   "version": "1.0.0",
-  "description": "Analyzes GitHub pull requests for potential security concerns",
-  "permissions": [
-    "activeTab",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://github.com/*"
-  ],
+  "description": "Analyzes GitHub pull requests for potential security concerns using multiple security APIs",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://github.com/*"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "content_scripts": [
     {
       "matches": ["https://github.com/*/pull/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }
