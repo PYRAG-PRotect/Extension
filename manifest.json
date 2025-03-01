@@ -3,7 +3,7 @@
   "name": "GitHub PR Security Analyzer",
   "version": "1.0.0",
   "description": "Analyzes GitHub pull requests for potential security concerns using multiple security APIs",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "scripting", "storage", "https://generativelanguage.googleapis.com/"],
   "host_permissions": ["https://github.com/*"],
   "action": {
     "default_popup": "popup.html",
@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["https://github.com/*/pull/*"],
-      "js": ["content.js","gem.js","content.js"]
+      "js": ["content.js"]
     }
   ],
   "icons": {
